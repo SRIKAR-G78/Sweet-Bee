@@ -15,15 +15,19 @@
             <h1>Sweet Bee</h1>
         </div>
         <ul class="nav-links">
-            <li><a href="home" class="active">Home</a></li>
-            <li><a href="products">Our Honey</a></li>
-            <li><a href="about">About Bees</a></li>
-            <li><a href="contact">Contact</a></li>
+            <li><a href="#home" id="nav-home" class="active">Home</a></li>
+            <li><a href="#products" id="nav-products">Our Honey</a></li>
+            <li><a href="#about" id="nav-about">About Bees</a></li>
+            <li><a href="#contact" id="nav-contact">Contact</a></li>
         </ul>
+        <div class="nav-icons">
+            <a href="#cart" class="cart-icon" id="cart-icon" title="Cart"><i class="fas fa-shopping-cart"></i></a>
+            <a href="#account" class="account-icon" id="account-icon" title="Account"><i class="fas fa-user"></i></a>
+        </div>
     </nav>
 
     <!-- Hero Section -->
-    <header class="hero">
+    <header class="hero" id="home">
         <div class="hero-content">
             <h1>Pure Natural Honey</h1>
             <p>Straight from the beehive to your table</p>
@@ -31,7 +35,7 @@
     </header>
 
     <!-- Honey Products Section -->
-    <section class="honey-products">
+    <section class="honey-products" id="products">
         <h2>Our Premium Honey Collection</h2>
         <div class="honey-grid">
             <!-- Wildflower Honey Card -->
@@ -103,7 +107,7 @@
     </section>
 
     <!-- Quality Guarantee Section -->
-    <section class="quality-guarantee">
+    <section class="quality-guarantee" id="about">
         <h2>Our Quality Guarantee</h2>
         <div class="quality-features">
             <div class="feature">
@@ -125,7 +129,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer" id="contact">
         <div class="footer-content">
             <div class="footer-section">
                 <h3>Sweet Bee</h3>
@@ -139,9 +143,9 @@
             <div class="footer-section">
                 <h3>Follow Us</h3>
                 <div class="social-icons">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="https://facebook.com/" target="_blank" rel="noopener"><i class="fab fa-facebook"></i></a>
+                    <a href="https://instagram.com/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+                    <a href="https://twitter.com/" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a>
                 </div>
             </div>
         </div>
@@ -149,6 +153,51 @@
             <p>&copy; 2024 Sweet Bee. All rights reserved.</p>
         </div>
     </footer>
+    <div id="cart-modal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <span class="close" id="close-cart">&times;</span>
+            <h2>Your Cart</h2>
+            <div id="cart-items">
+                <div class="cart-item">
+                    <span class="item-name">Wildflower Honey</span> x <span class="item-qty">2</span>
+                    <span class="item-price">$10.00</span>
+                    <button class="buy-btn">Buy</button>
+                </div>
+                <div class="cart-item">
+                    <span class="item-name">Manuka Honey</span> x <span class="item-qty">1</span>
+                    <span class="item-price">$25.00</span>
+                    <button class="buy-btn">Buy</button>
+                </div>
+                <div class="cart-item">
+                    <span class="item-name">Acacia Honey</span> x <span class="item-qty">3</span>
+                    <span class="item-price">$18.00</span>
+                    <button class="buy-btn">Buy</button>
+                </div>
+            </div>
+            <div class="cart-total">Total: <span id="cart-total">$53.00</span></div>
+            <button id="checkout-btn">Checkout</button>
+            <div class="payment-options" id="payment-options">
+                <label style="display:block; margin:1.2rem 0 0.5rem 0; font-weight:bold; color:#8b4513;">Payment Options:</label>
+                <div style="display:flex; flex-direction:column; align-items:flex-start; gap:0.5rem;">
+                    <label><input type="radio" name="payment-method" value="credit-card" checked> Credit Card</label>
+                    <label><input type="radio" name="payment-method" value="paypal"> PayPal</label>
+                    <label><input type="radio" name="payment-method" value="google-pay"> Google Pay</label>
+                </div>
+            </div>
+            <button id="pay-btn" style="margin-top:1.2rem;">Pay</button>
+        </div>
+    </div>
+    <div id="profile-modal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <span class="close" id="close-profile">&times;</span>
+            <h2>Profile</h2>
+            <div id="profile-info">
+                <div><strong>Name:</strong> Jane Doe</div>
+                <div><strong>Email:</strong> jane.doe@email.com</div>
+            </div>
+            <button id="logout-btn">Logout</button>
+        </div>
+    </div>
 </body>
 <script src="./javascript.js"></script>
 </html>
